@@ -1,4 +1,4 @@
-import  Header  from './components/Header.jsx';
+import  Header  from './Header.jsx';
 
 import Specials from './components/Specials.jsx';
 import About from './components/About.jsx';
