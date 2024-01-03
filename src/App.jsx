@@ -10,7 +10,7 @@ import BookingsPage from './components/BookingsPage.jsx';
 import ErrorPage from './components/Error-page.jsx';
 import Specials from './components/Specials.jsx';
 import About from './components/About.jsx';
-import Details from './components/Details.jsx';
+
 import Review from './components/Review.jsx';
 import ContactForm from './components/ContactForm.jsx';
 import Bookings from './components/Bookings.jsx'
@@ -88,8 +88,7 @@ function App() {
           <Route path="/About" element={<About />}/>
           <Route path="/OrderOnline" element={<ErrorPage />}/>
           <Route path="/Login" element={<ErrorPage />}/>
-          <Route path="/Details" element={<Details />}/>
-          <Route path="/Review" element={<Review />}/>
+
           <Route path="/ContactForm" element={<ContactForm />}/>
           <Route path="/Bookings" element={<Bookings />}/>
         </Routes>
