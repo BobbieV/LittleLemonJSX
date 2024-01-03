@@ -1,10 +1,10 @@
-import  Header  from './Header.tsx';
+import  Header  from './components/Header.tsx';
 
-import Specials from './Specials.tsx';
-import About from './About.tsx';
-import Testimonials from './Testimonials.tsx';
-import Footer from './Footer.tsx';
-import './ndex.css';
+import Specials from './components/Specials.tsx';
+import About from './components/About.tsx';
+import Testimonials from './components/Testimonials.tsx';
+import Footer from './components/Footer.tsx';
+import './index.css';
 
 export default function Home() {
     return (
