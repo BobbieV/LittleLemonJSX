@@ -4,7 +4,7 @@ import Specials from './Specials.jsx';
 import About from './About.jsx';
 import Testimonials from './Testimonials.jsx';
 import Footer from './Footer.jsx';
-import './index.css';
+
 
 export default function Home() {
     return (
