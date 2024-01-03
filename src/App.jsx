@@ -11,7 +11,7 @@ import ErrorPage from './components/Error-page.jsx';
 import Specials from './components/Specials.jsx';
 import About from './components/About.jsx';
 
-import Review from './components/Review.jsx';
+
 import ContactForm from './components/ContactForm.jsx';
 import Bookings from './components/Bookings.jsx'
 
