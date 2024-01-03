@@ -1,4 +1,4 @@
-import  Home from './components/Home.tsx';
+import  Home from './components/Home.jsx';
 import './index.css';
 import {
   NavLink,
@@ -6,14 +6,14 @@ import {
   Route,
   BrowserRouter
 } from 'react-router-dom';
-import BookingsPage from './components/BookingsPage.tsx';
-import ErrorPage from './components/Error-page.tsx';
-import Specials from './components/Specials.tsx';
+import BookingsPage from './components/BookingsPage.jsx';
+import ErrorPage from './components/Error-page.jsx';
+import Specials from './components/Specials.jsx';
 import About from './components/About.jsx';
-import Details from './components/Details.tsx';
-import Review from './components/Review.tsx';
-import ContactForm from './components/ContactForm.tsx';
-import Bookings from './components/Bookings.tsx'
+import Details from './components/Details.jsx';
+import Review from './components/Review.jsx';
+import ContactForm from './components/ContactForm.jsx';
+import Bookings from './components/Bookings.jsx'
 
 
 function App() {
