@@ -1,9 +1,9 @@
 import  Header  from './Header.jsx';
 
-import Specials from './components/Specials.jsx';
-import About from './components/About.jsx';
-import Testimonials from './components/Testimonials.jsx';
-import Footer from './components/Footer.jsx';
+import Specials from './Specials.jsx';
+import About from './About.jsx';
+import Testimonials from './Testimonials.jsx';
+import Footer from './Footer.jsx';
 import './index.css';
 
 export default function Home() {
