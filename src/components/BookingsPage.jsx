@@ -1,4 +1,4 @@
-import { BookingProvider } from "./components/BookingContext.jsx";
+import { BookingProvider } from "./BookingContext.jsx";
 import BookingForm from "./components/BookingForm.jsx"
 
 
