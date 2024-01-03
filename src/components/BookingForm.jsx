@@ -2,7 +2,7 @@ import { useState, ChangeEvent, FormEvent } from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
-import { useBookingContext, BookingProvider } from './components/BookingContext.jsx'
+import { useBookingContext, BookingProvider } from './BookingContext.jsx'
 
 
 const BookingForm = () => {

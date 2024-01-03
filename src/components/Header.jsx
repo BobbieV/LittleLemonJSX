@@ -1,4 +1,4 @@
-import ReserveATableButton from './components/ReserveATableButton.jsx'
+import ReserveATableButton from './ReserveATableButton.jsx'
 
 
 function Header() {
