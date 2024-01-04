@@ -8,14 +8,14 @@ function BookingsPage() {
 
 
   return (
-    <BookingProvider>
+  //<BookingProvider>
     <div>
 
-            <BookingForm />
+       <BookingForm />
 
     </div>
-    </BookingProvider>
+   // </BookingProvider>
   );
-        }
+ }
 
 export default BookingsPage;
