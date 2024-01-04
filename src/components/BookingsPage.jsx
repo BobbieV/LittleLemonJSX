@@ -8,13 +8,13 @@ function BookingsPage() {
 
 
   return (
-  <BookingProvider>
+  <Booking.Provider value="bookingData">
     <div>
 <BookingForm />
-
+<ContactForm />
 
     </div>
-   </BookingProvider>
+   </Booking.Provider>
   );
  }
 
