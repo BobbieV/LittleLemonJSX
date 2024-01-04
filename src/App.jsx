@@ -90,7 +90,7 @@ function App() {
           <Route path="/Login" element={<ErrorPage />}/>
 
           <Route path="/ContactForm" element={<ContactForm />}/>
-          <Route path="/Bookings" element={<Bookings />}/>
+          <Route path="/components/Bookings" element={<Bookings />}/>
         </Routes>
   </BrowserRouter>
     </>

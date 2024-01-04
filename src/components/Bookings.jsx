@@ -25,7 +25,7 @@ function Bookings() {
             <p>{bookingData.time}</p>
             <p>{bookingData.numGuests}</p>
             <p>{bookingData.occasion}</p>
-        <Link to="/BookingsPage">Edit Reservation</Link>
+        <Link to="/components/BookingsPage">Edit Reservation</Link>
         <Link to="/">Home</Link>
 
     </main>
