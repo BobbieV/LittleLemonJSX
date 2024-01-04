@@ -155,7 +155,7 @@ const BookingForm = () => {
                             Home
                     </Link>
                     <Link
-                        to="/Bookings"
+                        to="/components/Bookings"
                         className="button">
                             View Reservation
                     </Link>
