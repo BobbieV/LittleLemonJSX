@@ -9,13 +9,13 @@ function BookingsPage() {
 
 
   return (
- // <BookingProvider>
+ <BookingProvider>
     <div>
     <ContactForm />
 <BookingForm />
-
+test
     </div>
-  // </BookingProvider>
+ </BookingProvider>
   );
  }
 
