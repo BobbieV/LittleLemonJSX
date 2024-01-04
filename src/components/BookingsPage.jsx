@@ -11,7 +11,7 @@ function BookingsPage() {
   //<BookingProvider>
     <div>
 test
-       //<BookingForm />
+
 
     </div>
    // </BookingProvider>
