@@ -9,7 +9,7 @@ function BookingsPage() {
 
 
   return (
-  <BookingProvider value={bookingData}>
+  <BookingProvider>
     <div>
     <ContactForm />
 <BookingForm />
