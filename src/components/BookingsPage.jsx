@@ -11,8 +11,8 @@ function BookingsPage() {
   return (
   <BookingProvider value="bookingData">
     <div>
+    <ContactForm />
 <BookingForm />
-<ContactForm />
 
     </div>
    </BookingProvider>
