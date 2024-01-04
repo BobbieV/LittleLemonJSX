@@ -12,7 +12,7 @@ const BookingForm = () => {
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
-    const [time, setTime] = useState<string>("");
+    const [time, setTime] = useState("");
     const [numGuests, setNumGuests] = useState("")
     const [occasion, setOccasion] = useState("");
 

@@ -1,5 +1,5 @@
-//import { BookingProvider } from "./BookingContext.jsx";
-//import BookingForm from "./BookingForm.jsx"
+import { BookingProvider } from "./BookingContext.jsx";
+import BookingForm from "./BookingForm.jsx"
 
 
 function BookingsPage() {
@@ -8,13 +8,13 @@ function BookingsPage() {
 
 
   return (
-  //<BookingProvider>
+  <BookingProvider>
     <div>
-test
+<BookingForm />
 
 
     </div>
-   // </BookingProvider>
+   </BookingProvider>
   );
  }
 
