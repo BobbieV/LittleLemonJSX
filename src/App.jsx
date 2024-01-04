@@ -54,7 +54,7 @@ function App() {
               >Menu
             </NavLink>
             <NavLink
-              to="/BookingsPage"
+              to="/components/BookingsPage"
               className="navbar navtextReservations"
               style={({ isActive }) => ({
                 color: isActive ? '#495E57' : '#333333'

@@ -8,7 +8,7 @@ import { useBookingContext, BookingProvider } from './BookingContext.jsx'
 const BookingForm = () => {
 
     const [newBooking, setNewBooking] = useState([])
-    const { bookingData, setBookingData} =useBookingContext();
+    const { bookingData, setBookingData} = useBookingContext();
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
