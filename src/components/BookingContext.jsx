@@ -17,7 +17,6 @@ export const useBookingContext = () => {
         throw new Error('useBooking must be used within a BookingProvider');
     } else {
   return context;
-  console.log(context);
 };
 };
 

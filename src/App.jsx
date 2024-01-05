@@ -20,7 +20,8 @@ function App() {
 
   return (
     <>
-  <BrowserRouter >
+    <BookingProvider>
+    <BrowserRouter >
   <div className="navLinksWrapper">
     <nav id="nav">
           <img
@@ -93,6 +94,8 @@ function App() {
           <Route path="/components/Bookings" element={<Bookings />}/>
         </Routes>
   </BrowserRouter>
+    </BookingProvider>
+
     </>
   )
 }

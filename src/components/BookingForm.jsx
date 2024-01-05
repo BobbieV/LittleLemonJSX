@@ -2,7 +2,7 @@ import { useState, ChangeEvent, FormEvent } from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
-import { useBookingContext, BookingProvider } from './BookingContext.jsx'
+import { useBookingContext } from './BookingContext.jsx'
 
 
 const BookingForm = () => {
@@ -59,7 +59,6 @@ const BookingForm = () => {
     console.log(bookingData)
     console.log(newBooking);
     return(
-        <BookingProvider>
             <div className="BookingForm">
                 <form onSubmit={handleSubmit}>
                     <fieldset>
@@ -166,7 +165,6 @@ const BookingForm = () => {
            <p>Name: {bookingData.resName}</p>
            <p>Number of Guests:{bookingData.numGuests}</p>
         </div>
-        </BookingProvider>
     )
 }
 export default BookingForm;

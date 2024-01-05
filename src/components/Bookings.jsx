@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { BookingProvider, useBookingContext } from "./BookingContext.jsx";
+import { useBookingContext } from "./BookingContext.jsx";
 
 
 
 function Bookings() {
     const { bookingData } = useBookingContext();
-
     const resName = bookingData.resName;
     const time = bookingData.time;
     const date = bookingData.date;
@@ -18,7 +17,7 @@ function Bookings() {
 
 
     return(
-    <BookingProvider>
+
         <>
         <main id="availability">
             <header className="availabilityHeader">
@@ -35,7 +34,7 @@ function Bookings() {
 
     </main>
     </>
-    </BookingProvider>
+
    )
 }
 
