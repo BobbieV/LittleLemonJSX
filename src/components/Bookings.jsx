@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { BookingProvider, useBookingContext } from "./BookingContext.jsx";
 
-
+const { bookingData } = useBookingContext();
 
 function Bookings() {
 
-    const { bookingData } = useBookingContext();
 
- if (!bookingData) {
-      return <p>loading...</p>
-    } else {
+
+ //if (!bookingData) {
+   //   return <p>loading...</p>
+    //} else {
 
 
     return(
@@ -33,5 +33,5 @@ function Bookings() {
     </BookingProvider>
    )
 }
-}
+
    export default Bookings;
