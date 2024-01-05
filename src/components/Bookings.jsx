@@ -20,11 +20,11 @@ function Bookings() {
                 <h2 className="availH2">Your </h2>
                 <h2 className="availH2">Reservation</h2>
             </header>
-            <p>{bookingData.resName}</p>
-            <p>{bookingData.date}</p>
-            <p>{bookingData.time}</p>
-            <p>{bookingData.numGuests}</p>
-            <p>{bookingData.occasion}</p>
+            <p>{resName}</p>
+            <p>{date}</p>
+            <p>{time}</p>
+            <p>{numGuests}</p>
+            <p>{occasion}</p>
         <Link to="/components/BookingsPage">Edit Reservation</Link>
         <Link to="/">Home</Link>
 
