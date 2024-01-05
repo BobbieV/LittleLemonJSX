@@ -8,9 +8,9 @@ function Bookings() {
     const { bookingData } = useBookingContext();
 
  if (!bookingData) {
-        return <p>loading...</p>
+      return <p>loading...</p>
     } else {
-}
+
 
     return(
     <BookingProvider>
@@ -33,5 +33,5 @@ function Bookings() {
     </BookingProvider>
    )
 }
-
+}
    export default Bookings;
