@@ -3,7 +3,7 @@ import { BookingProvider, useBookingContext } from "./BookingContext.jsx";
 
 
 
-function Bookings(bookingData) {
+function Bookings() {
     const { bookingData } = useBookingContext();
 
 
