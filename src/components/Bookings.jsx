@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { BookingProvider, useBookingContext } from "./BookingContext.jsx";
 
-const { bookingData } = useBookingContext();
+
 
 function Bookings(bookingData) {
-
+    const { bookingData } = useBookingContext();
 
 
  //if (!bookingData) {
