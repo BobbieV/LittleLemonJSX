@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BookingProvider, useBookingContext} from "./BookingContext.jsx";
+import { BookingProvider, useBookingContext, bookingData} from "./BookingContext.jsx";
 
 
 
