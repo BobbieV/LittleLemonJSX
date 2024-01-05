@@ -36,7 +36,7 @@ const BookingForm = () => {
         e.preventDefault();
         console.log("Form Submitted!");
         alert("Your reservation is Confirmed")
-        setResName("");
+        setResName(e.target.value);
         setDate("");
         setTime("");
         setNumGuests("");
