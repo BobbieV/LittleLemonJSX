@@ -25,7 +25,7 @@ export const BookingProvider = ({
     children
 }) => {
     const [bookingData, setBookingData]= useState({
-        resName: "",
+        resName: e.target.value,
         date: "",
         time: "",
         numGuests: "",
