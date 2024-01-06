@@ -55,7 +55,6 @@ export const BookingProvider = ({
         { time: "8:30 pm", available: true },
       ];
 
-      const [bookingData, dispatchBooking] =  useReducer(bookingReducer, initialBookingData);
       const [availability, dispatchAvailability] = useReducer(availabilityReducer, initialAvailability);
 
     const contextValue = {
