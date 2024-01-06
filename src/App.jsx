@@ -15,25 +15,18 @@ import ContactForm from './components/ContactForm.jsx';
 import Bookings from './components/Bookings.jsx';
 
 
-
-
-
-
-
 function App() {
 
-
   return (
-
     <BookingProvider>
-    <BrowserRouter >
-  <div className="navLinksWrapper">
-    <nav id="nav">
-          <img
-            src="https://github.com/BobbieV/littleLemon/blob/main/src/assets/images/logo.png?raw=true"
-            className="AppLogo"
-            alt="A lemon icon followed by the words 'Little Lemon'">
-          </img>
+      <BrowserRouter >
+        <div className="navLinksWrapper">
+          <nav id="nav">
+            <img
+              src="https://github.com/BobbieV/littleLemon/blob/main/src/assets/images/logo.png?raw=true"
+              className="AppLogo"
+              alt="A lemon icon followed by the words 'Little Lemon'">
+            </img>
 
             <NavLink
               to="/"
@@ -84,10 +77,10 @@ function App() {
               >Login
             </NavLink>
 
-    </nav>
-    </div>
+          </nav>
+        </div>
 
-    <Routes>
+        <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/components/BookingsPage" element={<BookingsPage />}/>
           <Route path="/Specials" element={<Specials />}/>
@@ -98,10 +91,8 @@ function App() {
           <Route path="/ContactForm" element={<ContactForm />}/>
           <Route path="/components/Bookings" element={<Bookings />}/>
         </Routes>
-  </BrowserRouter>
+      </BrowserRouter>
     </BookingProvider>
-
-
   )
 }
 
