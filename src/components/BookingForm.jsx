@@ -2,17 +2,24 @@ import { useState, ChangeEvent, FormEvent } from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
-import { useBookingContext } from './BookingContext.jsx'
+import { useBookingContext } from './BookingContext.jsx';
+import BookingSlot from './BookingSlot.jsx';
 
 
 const BookingForm = () => {
 
+const Booking = () => {
+    const handleSlotSelect = (selectedTime) => {
+        console.log('Selected time slot: ${selectedTime');
+    }
+}
+
     const [newBooking, setNewBooking] = useState([])
-    const { bookingData, setBookingData} = useBookingContext();
+    const { bookingData, setBookingData, availableTimes} = useBookingContext();
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
+    const [selectedTime, setSelectedTime] = useState("");
     const [numGuests, setNumGuests] = useState("")
     const [occasion, setOccasion] = useState("");
 
@@ -23,7 +30,7 @@ const BookingForm = () => {
         setDate(e.target.value);
     }
     const handleTimeChange = (e) => {
-        setTime(e.target.value);
+        setSelectedTime(e.target.value);
     }
     const handleNumGuestsChange = (e) => {
         setNumGuests(e.target.value);
@@ -43,16 +50,7 @@ const BookingForm = () => {
         setOccasion("");
         setNewBooking(newBookingArray);
         setBookingData({...bookingData, resName, date, time, numGuests, occasion});
-        console.log({newBooking: newBookingArray});
-        console.log('Updated Booking Data', bookingData, resName);
-
-
     }
-    const [availableTimes] = useState([
-        "5:00 pm", "5:30 pm", "6:00 pm", "6:30 pm", "7:00 pm", "7:30 pm", "8:30 pm"
-    ]);
-
-    {/*const { bookingData, setBookingData } = useBooking();*/}
 
 
     const newBookingArray = [bookingData.resName, bookingData.date, bookingData.time, bookingData.numGuests, bookingData.occasion];
@@ -91,20 +89,20 @@ const BookingForm = () => {
                             />
                     </div>
                     <div className="field">
-                        <label
-                            htmlFor="res-time">
-                                Choose Time:
-                        </label>
+                        <label htmlFor="res-time"> Choose Time: </label>
                         <select
                             required
                             id="res-time"
-                            value={time}
+                            value={selectedTime}
                             onChange={handleTimeChange}
                             >
-                                {availableTimes.map((availableTime, index) => (
-                                    <option key={index} value={availableTime}>
-                                        {availableTime}
-                                    </option>
+                                {availableTimes.map((timeSlot, index) => (
+                                 <BookingSlot
+                                    key={index}
+                                    value={timeSlot.time}
+                                    disabled={!timeSlot.available}
+                                    onSlotSelect={handleTimeChange}
+                                    />
                                 ))}
                            </select>
                     </div>
@@ -161,9 +159,6 @@ const BookingForm = () => {
                     </div>
                 </fieldset>
             </form>
-           <p>New Booking {newBooking} </p>
-           <p>Name: {bookingData.resName}</p>
-           <p>Number of Guests:{bookingData.numGuests}</p>
         </div>
     )
 }

@@ -1,4 +1,6 @@
 import {createContext, useContext, useState } from 'react';
+import { useReducer } from 'react';
+
 
 export const BookingData = {
     resName: '',
@@ -10,6 +12,17 @@ export const BookingData = {
 
 
 export const BookingContext = createContext(BookingData);
+
+const availabilityReducer = (state, action) => {
+    switch (action.type) {
+      case 'UPDATE_AVAILABILITY':
+        return action.payload;
+      default:
+        return state;
+    }
+  };
+
+
 
 export const useBookingContext = () => {
     const context = useContext(BookingContext);
@@ -32,9 +45,25 @@ export const BookingProvider = ({
         occasion: "",
     });
 
+    const initialAvailability = [
+        { time: "5:00 pm", available: true },
+        { time: "5:30 pm", available: true },
+        { time: "6:00 pm", available: true },
+        { time: "6:30 pm", available: true },
+        { time: "7:00 pm", available: true },
+        { time: "7:30 pm", available: true },
+        { time: "8:30 pm", available: true },
+      ];
+
+      const [bookingData, dispatchBooking] =  useReducer(bookingReducer, initialBookingData);
+      const [availability, dispatchAvailability] = useReducer(availabilityReducer, initialAvailability);
+
     const contextValue = {
         bookingData,
-        setBookingData
+        setBookingData,
+        dispatchBooking,
+        availability,
+        dispatchAvailability,
     };
     return (
         <BookingContext.Provider value={contextValue}>
