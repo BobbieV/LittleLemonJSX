@@ -1,6 +1,4 @@
-import {createContext, useContext, useState } from 'react';
-import { useReducer } from 'react';
-
+import {createContext, useContext, useState, useReducer } from 'react';
 
 export const BookingData = {
     resName: '',
@@ -8,10 +6,18 @@ export const BookingData = {
     time: '',
     numGuests: '',
     occasion: '',
-}
-
+};
 
 export const BookingContext = createContext(BookingData);
+
+const bookingReducer = (state, action) => {
+    switch (action.type) {
+        case 'UPDATE_BOOKING_DATA':
+            return {...state, ...action.payload};
+        default :
+            return state;
+    }
+}
 
 const availabilityReducer = (state, action) => {
     switch (action.type) {

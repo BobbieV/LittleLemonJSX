@@ -8,14 +8,7 @@ import BookingSlot from './BookingSlot.jsx';
 
 const BookingForm = () => {
 
-const Booking = () => {
-    const handleSlotSelect = (selectedTime) => {
-        console.log('Selected time slot: ${selectedTime');
-    }
-}
-
-    const [newBooking, setNewBooking] = useState([])
-    const { bookingData, setBookingData, availableTimes} = useBookingContext();
+    const { dispatchBooking, dispatchAvailability, availableTimes} = useBookingContext();
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
@@ -30,7 +23,12 @@ const Booking = () => {
         setDate(e.target.value);
     }
     const handleTimeChange = (e) => {
-        setSelectedTime(e.target.value);
+        const selectedTime = e.target.value;
+        setSelectedTime(selectedTime);
+        dispatchAvailability({
+            type: 'UPDATE_AVAILABILITY',
+            payload: selectedTime,
+        })
     }
     const handleNumGuestsChange = (e) => {
         setNumGuests(e.target.value);
@@ -48,14 +46,19 @@ const Booking = () => {
         setTime("");
         setNumGuests("");
         setOccasion("");
-        setNewBooking(newBookingArray);
         setBookingData({...bookingData, resName, date, time, numGuests, occasion});
+        dispatchBooking({
+            type: 'UPDATE_BOOKING_DATA',
+            payload: {
+                resName,
+                date,
+                time: selectedTime,
+                numGuests,
+                occasion,
+            },
+        });
     }
 
-
-    const newBookingArray = [bookingData.resName, bookingData.date, bookingData.time, bookingData.numGuests, bookingData.occasion];
-    console.log(bookingData)
-    console.log(newBooking);
     return(
             <div className="BookingForm">
                 <form onSubmit={handleSubmit}>
