@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { useBookingContext } from './BookingContext.jsx';
-import BookingSlot from './components/BookingSlot.jsx';
+import { BookingSlot } from './components/BookingSlot.jsx';
 
 
 const BookingForm = () => {
