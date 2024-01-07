@@ -1,14 +1,16 @@
 import { useBookingContext } from './BookingContext';
 
 
-const BookingSlot = ({ time, available, onSlotSelect }) => {
-    const { time, available, initialAvailability } = useBookingContext();
+const BookingSlot = ({ time }) => {
+    const { availableTimes } = useBookingContext();
+    const handleClick = (selectedTime) => {
+        const selectedSlot = availableTimes.find(slot => slot.time === selectedTime);
 
-    const handleClick = () => {
-        if (available && onSlotSelect) {
-            onSlotSelect(time);
-        }
-    }
+        if (selectedSlot && selectedSlot.available) {
+            console.log('Selected time: ${selectedTime}');
+        } else {
+            console.log('Selected time ${selectedTime} is not available');
+        }}
 
     return (
             <option value={time} onClick={handleClick} disabled={!available}>
