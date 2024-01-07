@@ -22,7 +22,17 @@ const bookingReducer = (state, action) => {
 const availabilityReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_AVAILABILITY':
-        return action.payload;
+        const { selectedTime } = action.payload;
+        const index = state.findIndex(slot => slot.time === selectedTime);
+
+        if (index !== -1) {
+            const updatedAvailability = [...state];
+            updatedAvailability[index] = {
+                ...updatedAvailability[index].available,
+            };
+        return updatedAvailability;
+        }
+        return state;
       default:
         return state;
     }
