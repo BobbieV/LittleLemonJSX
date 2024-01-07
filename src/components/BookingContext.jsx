@@ -73,6 +73,8 @@ export const BookingProvider = ({
         availability,
         initialAvailability,
         dispatchAvailability,
+        available,
+        time,
     };
     return (
         <BookingContext.Provider value={contextValue}>
