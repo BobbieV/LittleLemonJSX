@@ -87,7 +87,7 @@ function App() {
           <Route path="/About" element={<About />}/>
           <Route path="/OrderOnline" element={<ErrorPage />}/>
           <Route path="/Login" element={<ErrorPage />}/>
-          <Route path="/components/BookingSlot" element={<BookingSlot />} />
+
           <Route path="/ContactForm" element={<ContactForm />}/>
           <Route path="/components/Bookings" element={<Bookings />}/>
         </Routes>
