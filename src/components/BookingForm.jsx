@@ -148,7 +148,6 @@ const BookingForm = () => {
                             <option value="Other">Other</option>
                         </select>
                         <input type="submit" className="button" value="Make Your Reservation"/>
-                        <p>{newBooking}</p>
                     <Link
                         to="/"
                         className="button">
