@@ -56,7 +56,7 @@ export const BookingProvider = ({
     const [bookingDataState, dispatchBooking]= useReducer(bookingReducer, BookingData);
 
     const initialAvailability = [
-        { time: "5:00 pm", available: true },
+        { time: "5:00 pm", available: false },
         { time: "5:30 pm", available: true },
         { time: "6:00 pm", available: true },
         { time: "6:30 pm", available: true },
