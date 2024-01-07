@@ -1,4 +1,4 @@
-
+import { BookingContext } from './BookingContext';
 
 
 const BookingSlot = ({ time, available, onSlotSelect }) => {
