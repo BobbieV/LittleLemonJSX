@@ -13,8 +13,8 @@ const BookingSlot = () => {
         }}
 
     return (
-            <option value={time} onClick={handleClick} disabled={!available}>
-                {time} {available ? '(Available)' : '(Not Available)'}
+            <option value={availTime} onClick={handleClick} disabled={!available}>
+                {availTime} {available ? '(Available)' : '(Not Available)'}
             </option>
     )
 }
