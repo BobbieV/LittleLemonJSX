@@ -61,7 +61,7 @@ export const BookingProvider = ({
         bookingData: bookingDataState,
         dispatchBooking,
         availability,
-        availableTimes,
+        initialAvailability,
         dispatchAvailability,
     };
     return (
