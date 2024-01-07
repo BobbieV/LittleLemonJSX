@@ -99,7 +99,7 @@ const BookingForm = () => {
                             value={selectedTime}
                             onChange={handleTimeChange}
                             >
-                                {availableTimes.map((timeSlot, index) => (
+                                {initialAvailability.map((timeSlot, index) => (
                                  <BookingSlot
                                     key={index}
                                     value={timeSlot.time}
