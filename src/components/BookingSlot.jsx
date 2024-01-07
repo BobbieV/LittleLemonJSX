@@ -1,7 +1,7 @@
 import { useBookingContext } from './BookingContext';
 
 
-const BookingSlot = ({ time }) => {
+const BookingSlot = () => {
     const { availability, available, time } = useBookingContext();
     const handleClick = (selectedTime) => {
         const selectedSlot = availability.find(slot => slot.time === selectedTime);
