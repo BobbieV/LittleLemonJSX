@@ -2,6 +2,7 @@ import { useBookingContext } from './BookingContext';
 
 
 const BookingSlot = ({ time, available, onSlotSelect }) => {
+    const { time, available, initialAvailability } = useBookingContext();
 
     const handleClick = () => {
         if (available && onSlotSelect) {
