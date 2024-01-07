@@ -65,6 +65,10 @@ export const BookingProvider = ({
         { time: "8:30 pm", available: true },
       ];
 
+
+const available = initialAvailability.available;
+const availTime = initialAvailability.time;
+
       const [availability, dispatchAvailability] = useReducer(availabilityReducer, initialAvailability);
 
     const contextValue = {
@@ -74,7 +78,7 @@ export const BookingProvider = ({
         initialAvailability,
         dispatchAvailability,
         available,
-        time,
+        availTime,
     };
     return (
         <BookingContext.Provider value={contextValue}>
