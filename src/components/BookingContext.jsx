@@ -23,12 +23,13 @@ const availabilityReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_AVAILABILITY':
         const { selectedTime } = action.payload;
-        const index = state.findIndex(slot => slot.time === selectedTime);
+        const index = state.findIndex(initialAvailability => initialAvailability.time === selectedTime);
 
         if (index !== -1) {
             const updatedAvailability = [...state];
             updatedAvailability[index] = {
-                ...updatedAvailability[index].available,
+                ...updatedAvailability[index],
+                available: !updatedAvailability[index].available,
             };
         return updatedAvailability;
         }
