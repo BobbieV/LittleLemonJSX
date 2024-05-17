@@ -51,12 +51,10 @@ export const useBookingContext = () => {
 };
 
 
-export const BookingProvider = ({
-    children
-}) => {
+export const BookingProvider = ({ children }) => {
     const [bookingDataState, dispatchBooking]= useReducer(bookingReducer, BookingData);
 
-    const initialAvailability = [
+    const availableTimes = [
         { time: "5:00 pm", available: false },
         { time: "5:30 pm", available: true },
         { time: "6:00 pm", available: true },
@@ -67,16 +65,16 @@ export const BookingProvider = ({
       ];
 
 
-const available = initialAvailability.available;
-const availTime = initialAvailability.time;
+    const available = availableTimes.available;
+    const availTime = availableTimes.time;
 
-      const [availability, dispatchAvailability] = useReducer(availabilityReducer, initialAvailability);
+    const [availability, dispatchAvailability] = useReducer(availabilityReducer, availableTimes);
 
     const contextValue = {
         bookingData: bookingDataState,
         dispatchBooking,
         availability,
-        initialAvailability,
+        availableTimes,
         dispatchAvailability,
         available,
         availTime,
