@@ -8,7 +8,7 @@ import  BookingSlot  from './BookingSlot.jsx';
 
 const BookingForm = () => {
 
-    const { dispatchBooking, dispatchAvailability, availableTimes} = useBookingContext();
+    const { dispatchBooking, dispatchAvailability, availability} = useBookingContext();
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
@@ -99,12 +99,11 @@ const BookingForm = () => {
                             value={selectedTime}
                             onChange={handleTimeChange}
                             >
-                                {availableTimes.map((slot, index) => (
+                                {availability.map((slot, index) => (
                                  <BookingSlot
                                     key={index}
                                     time={slot.time}
-                                    disabled={!availableTimes.available}
-                                    onSlotSelect={handleTimeChange}
+                                    available={slot.available}
                                     />
                                 ))}
                            </select>
