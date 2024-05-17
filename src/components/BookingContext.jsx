@@ -23,7 +23,7 @@ const availabilityReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_AVAILABILITY':
         const { selectedTime } = action.payload;
-        const index = state.findIndex(initialAvailability => initialAvailability.time === selectedTime);
+        const index = state.findIndex(slot => slot.time === selectedTime);
 
         if (index !== -1) {
             const updatedAvailability = [...state];
@@ -55,7 +55,7 @@ export const BookingProvider = ({ children }) => {
     const [bookingDataState, dispatchBooking]= useReducer(bookingReducer, BookingData);
 
     const availableTimes = [
-        { time: "5:00 pm", available: false },
+        { time: "5:00 pm", available: true },
         { time: "5:30 pm", available: true },
         { time: "6:00 pm", available: true },
         { time: "6:30 pm", available: true },
