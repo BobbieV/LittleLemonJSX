@@ -4,8 +4,8 @@ import { useBookingContext } from "./BookingContext.jsx";
 
 function Bookings() {
     const { bookingData } = useBookingContext();
-    const { resName, selectedTime, date, numGuests, occasion } = bookingData;
-
+    const { resName, time, date, numGuests, occasion } = bookingData;
+    console.log({time});
  if (!bookingData) {
         return <p>loading...</p>
 
@@ -20,7 +20,7 @@ function Bookings() {
                     </header>
                     <p>Your Name: { resName }</p>
                     <p>Date of Reservation: { date }</p>
-                    <p>Time of Reservation: { selectedTime }</p>
+                    <p>Time of Reservation: { time }</p>
                     <p>Number of Guests: { numGuests }</p>
                     <p>Occasion: { occasion }</p>
                     <Link to="/components/BookingsPage">Edit Reservation</Link>
