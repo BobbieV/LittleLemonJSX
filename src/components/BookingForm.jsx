@@ -27,7 +27,7 @@ const BookingForm = () => {
         setSelectedTime(selectedTime);
         dispatchAvailability({
             type: 'UPDATE_AVAILABILITY',
-            payload: selectedTime,
+            payload: { selectedTime },
         })
     }
     const handleNumGuestsChange = (e) => {
