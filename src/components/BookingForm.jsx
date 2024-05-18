@@ -26,7 +26,6 @@ const BookingForm = () => {
     const handleTimeChange = (e) => {
         const time = e.target.value;
         setSelectedTime(time);
-        console.log('The selected time is: ', time)
         dispatchAvailability({
             type: 'UPDATE_AVAILABILITY',
             payload: { time },
@@ -43,7 +42,8 @@ const BookingForm = () => {
     const handleSubmit = (e)=> {
         e.preventDefault();
         console.log("Form Submitted!");
-        alert("Your reservation is Confirmed")
+        console.log('The selected time is: ', time);
+        alert("Your reservation is Confirmed");
         setResName("");
         setDate("");
         setSelectedTime("");
