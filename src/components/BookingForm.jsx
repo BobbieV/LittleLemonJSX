@@ -55,7 +55,7 @@ const BookingForm = () => {
             payload: {
                 resName,
                 date,
-                time: selectedTime,
+                time,
                 numGuests,
                 occasion,
             },
