@@ -43,7 +43,7 @@ const BookingForm = () => {
         alert("Your reservation is Confirmed")
         setResName("");
         setDate("");
-        setTime("");
+        setSelectedTime("");
         setNumGuests("");
         setOccasion("");
         setBookingData({...bookingData, resName, date, time, numGuests, occasion});
