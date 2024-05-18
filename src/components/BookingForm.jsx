@@ -49,7 +49,7 @@ const BookingForm = () => {
         setSelectedTime("");
         setNumGuests("");
         setOccasion("");
-        setBookingData({...bookingData, resName, date, time, numGuests, occasion});
+        //setBookingData({...bookingData, resName, date, time, numGuests, occasion});
         dispatchBooking({
             type: 'UPDATE_BOOKING_DATA',
             payload: {
