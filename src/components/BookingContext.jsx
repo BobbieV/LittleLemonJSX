@@ -15,9 +15,12 @@ export const BookingContext = createContext(BookingData);
 const bookingReducer = (state, action) => {
     switch (action.type) {
         case 'UPDATE_BOOKING_DATA':
-            return {...state, ...action.payload};
+        console.log('bookingReducer UPDATE BOOKING DATA ', time, state )
+        return {...state, ...action.payload};
+
         default :
-            return state;
+        console.log('bookingReducer UPDATE BOOKING DATA ', time, state )
+        return state;
     }
 }
 // This is the reducer function that handles actions related to availability
@@ -25,10 +28,11 @@ const availabilityReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_AVAILABILITY':
         const { time } = action.payload;
+        console.log('availabilityReducer ', time )
        return state.map(slot =>
-        slot.time ===time ? { ...slot, available : !slot.available } : slot
+        slot.time === time ? { ...slot, available : !slot.available } : slot
         );
-       // Below this line is the previously existing code 
+       // Below this line is the previously existing code
         // const index = state.findIndex(slot => slot.time === time);
 
        // if (index !== -1) {
