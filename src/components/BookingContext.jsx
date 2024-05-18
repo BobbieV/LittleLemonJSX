@@ -4,6 +4,7 @@ export const BookingData = {
     resName: '',
     date: '',
     time: '',
+    selectedTime: '',
     numGuests: '',
     occasion: '',
 };
@@ -22,7 +23,7 @@ const bookingReducer = (state, action) => {
 const availabilityReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_AVAILABILITY':
-        const { selectedTime } = action.payload;
+        const { time } = action.payload;
         const index = state.findIndex(slot => slot.time === selectedTime);
 
         if (index !== -1) {
