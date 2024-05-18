@@ -5,7 +5,7 @@ import { useBookingContext } from "./BookingContext.jsx";
 function Bookings() {
     const { bookingData } = useBookingContext();
     const { resName, time, date, numGuests, occasion } = bookingData;
-    console.log(time);
+    //console.log(time);
  if (!bookingData) {
         return <p>loading...</p>
 
