@@ -13,7 +13,7 @@ const BookingForm = () => {
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
-    const [selectedTime, setSelectedTime] = useState("");
+    const [time, setSelectedTime] = useState("");
     const [numGuests, setNumGuests] = useState("")
     const [occasion, setOccasion] = useState("");
 
@@ -99,7 +99,7 @@ const BookingForm = () => {
                         <select
                             required
                             id="res-time"
-                            value={selectedTime}
+                            value={time}
                             onChange={handleTimeChange}
                             >
                                 {availability.map((slot, index) => (
