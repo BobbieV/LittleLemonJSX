@@ -4,7 +4,6 @@ export const BookingData = {
     resName: '',
     date: '',
     time: '',
-    selectedTime: '',
     numGuests: '',
     occasion: '',
 };
@@ -24,7 +23,7 @@ const availabilityReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_AVAILABILITY':
         const { time } = action.payload;
-        const index = state.findIndex(slot => slot.time === selectedTime);
+        const index = state.findIndex(slot => slot.time === time);
 
         if (index !== -1) {
             const updatedAvailability = [...state];
@@ -66,8 +65,8 @@ export const BookingProvider = ({ children }) => {
       ];
 
 
-    const available = availableTimes.available;
-    const availTime = availableTimes.time;
+    //const available = availableTimes.available;
+    //const availTime = availableTimes.time;
 
     const [availability, dispatchAvailability] = useReducer(availabilityReducer, availableTimes);
 
@@ -75,10 +74,10 @@ export const BookingProvider = ({ children }) => {
         bookingData: bookingDataState,
         dispatchBooking,
         availability,
-        availableTimes,
+        //availableTimes,
         dispatchAvailability,
-        available,
-        availTime,
+        //available,
+        //availTime,
     };
     return (
         <BookingContext.Provider value={contextValue}>
