@@ -1,4 +1,5 @@
-import { useState, ChangeEvent, FormEvent } from 'react'
+import { useState, } from 'react'
+//import { ChangeEvent, FormEvent } from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
@@ -23,11 +24,13 @@ const BookingForm = () => {
         setDate(e.target.value);
     }
     const handleTimeChange = (e) => {
-        const selectedTime = e.target.value;
-        setSelectedTime(selectedTime);
+        const time = e.target.value;
+        setSelectedTime(time);
+        console.log('The selected time is: ', time)
         dispatchAvailability({
             type: 'UPDATE_AVAILABILITY',
-            payload: { selectedTime },
+            payload: { time },
+
         })
     }
     const handleNumGuestsChange = (e) => {
@@ -46,7 +49,7 @@ const BookingForm = () => {
         setSelectedTime("");
         setNumGuests("");
         setOccasion("");
-        //setBookingData({...bookingData, resName, date, time, numGuests, occasion});
+        setBookingData({...bookingData, resName, date, time, numGuests, occasion});
         dispatchBooking({
             type: 'UPDATE_BOOKING_DATA',
             payload: {
