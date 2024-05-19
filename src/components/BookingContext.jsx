@@ -1,5 +1,5 @@
 import {createContext, useContext, useState, useReducer } from 'react';
-import { bookingData } from /components/BookingData;
+import { bookingData } from './components/BookingData.jsx';
 
 initialBookingData = { bookingData }
 

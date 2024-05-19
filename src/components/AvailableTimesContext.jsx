@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from 'react';
-import { availableTimes } from /components/AvailableTimes;
+import { availableTimes } from './components/AvailableTimes.jsx';
 
-const initialAvailableTimes = availableTimes
+
 
 export const AvailableTimesContext = createContext(availableTimes)
 

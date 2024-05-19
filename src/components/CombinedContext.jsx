@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from 'react';
-import { availabilityReducer, initialAvailableTimes } from './AvailableTimesContext';
-import { bookingReducer, initialBookingData } from './BookingContext';
+import { availabilityReducer, initialAvailableTimes } from './AvailableTimesContext.jsx';
+import { bookingReducer, initialBookingData } from './BookingContext.jsx';
 
 // Combine initial states
 const initialState = {
