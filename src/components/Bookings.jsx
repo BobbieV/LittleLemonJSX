@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useBookingContext } from "./BookingContext.jsx";
+import { useCombinedContext } from "./CombinedContext.jsx";
 
 
 function Bookings() {

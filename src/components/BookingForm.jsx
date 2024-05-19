@@ -3,19 +3,19 @@ import { useState, } from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
-import { useBookingContext } from './BookingContext.jsx';
+import { useCombinedContext } from './CombinedContext.jsx';
 import  BookingSlot  from './BookingSlot.jsx';
 
 
 const BookingForm = () => {
 
-    const { dispatchBooking, dispatchAvailability, availableTimes} = useBookingContext();
+    const { dispatch, availableTimes, bookingData} = useCombinedContext();
 
-    const [resName, setResName] = useState("");
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [numGuests, setNumGuests] = useState("")
-    const [occasion, setOccasion] = useState("");
+    const [resName, setResName] = useState(bookingData.resname);
+    const [date, setDate] = useState(bookingData.date);
+    const [time, setTime] = useState(bookingData.time);
+    const [numGuests, setNumGuests] = useState(bookingData.numGuests)
+    const [occasion, setOccasion] = useState(bookingData.occasion);
 
     const handleResNameChange = (e) => {
         setResName(e.target.value);
@@ -27,7 +27,7 @@ const BookingForm = () => {
         const time = e.target.value;
         setTime(time);
         console.log('handleTimeChange ', time )
-        dispatchAvailability({
+        dispatch({
             type: 'UPDATE_AVAILABILITY',
             payload: { time },
 
@@ -45,13 +45,13 @@ const BookingForm = () => {
         console.log("Form Submitted!");
         console.log('The selected time is: ', time);
         alert("Your reservation is Confirmed");
-        setResName("");
-        setDate("");
-        setTime("");
-        setNumGuests("");
-        setOccasion("");
+        //setResName("");
+        //setDate("");
+        //setTime("");
+        //setNumGuests("");
+        //setOccasion("");
         //setBookingData({...bookingData, resName, date, time, numGuests, occasion});
-        dispatchBooking({
+        dispatch({
             type: 'UPDATE_BOOKING_DATA',
             payload: {
                 resName,

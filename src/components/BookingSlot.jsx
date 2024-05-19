@@ -4,7 +4,7 @@ import React from 'react';
 const BookingSlot = ({ time, available }) => {
     return (
         // Display the available time, but disable if unavailble
-            <option value={time} disabled={!available}> 
+            <option value={time} disabled={!available}>
                 {time} {available ? '(Available)' : '(Not Available)'}
             </option>
     )

@@ -1,25 +1,10 @@
 import {createContext, useContext, useState, useReducer } from 'react';
+import { bookingData } from /components/BookingData;
 
-// This is the initial state for the booking data
-export const BookingData = {
-    resName: '',
-    date: '',
-    time: '',
-    numGuests: '',
-    occasion: '',
-};
+initialBookingData = { bookingData }
 
-    // This is the initial state of the available time slots
-    const availableTimes = [
-        { time: "5:00 pm", available: true },
-        { time: "5:30 pm", available: true },
-        { time: "6:00 pm", available: true },
-        { time: "6:30 pm", available: true },
-        { time: "7:00 pm", available: true },
-        { time: "7:30 pm", available: true },
-        { time: "8:30 pm", available: true },
-      ];
-export const BookingContext = createContext(BookingData);
+export const bookingContext = createContext(bookingData);
+
 
 // This is the reducer function that handles actions related to booking data
 const bookingReducer = (state, action) => {
@@ -33,31 +18,6 @@ const bookingReducer = (state, action) => {
         return state;
     }
 }
-// This is the reducer function that handles actions related to availability
-const availabilityReducer = (state, action) => {
-    switch (action.type) {
-      case 'UPDATE_AVAILABILITY':
-        const { time } = action.payload;
-        console.log('availabilityReducer ', time )
-       return state.map(slot =>
-        slot.time === time ? { ...slot, available : !slot.available } : slot
-        );
-       // Below this line is the previously existing code
-        // const index = state.findIndex(slot => slot.time === time);
-
-       // if (index !== -1) {
-           // const updatedAvailability = [...state];
-            //updatedAvailability[index] = {
-                //...updatedAvailability[index],
-                //available: !updatedAvailability[index].available,
-            //};
-        //return updatedAvailability;
-        //}
-        //return state;
-      default:
-        return state;
-    }
-  };
 
 
 
@@ -79,9 +39,6 @@ export const BookingProvider = ({ children }) => {
     const contextValue = {
         bookingData: bookingDataState, // Current booking data state
         dispatchBooking, // Function to update booking data state
-        availableTimes: availableTimesState, // Current availability state
-        dispatchAvailability,// Function to update availability state
-
     };
     return (
         <BookingContext.Provider value={contextValue}>
