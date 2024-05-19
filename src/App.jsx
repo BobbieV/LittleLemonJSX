@@ -10,7 +10,7 @@ import BookingsPage from './components/BookingsPage.jsx';
 import ErrorPage from './components/Error-page.jsx';
 import Specials from './components/Specials.jsx';
 import About from './components/About.jsx';
-import { BookingProvider } from "./components/BookingContext";
+import { CombinedProvider } from "./components/CombinedContext";
 import ContactForm from './components/ContactForm.jsx';
 import Bookings from './components/Bookings.jsx';
 
