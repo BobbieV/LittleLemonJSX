@@ -9,6 +9,16 @@ export const BookingData = {
     occasion: '',
 };
 
+    // This is the initial state of the available time slots
+    const availableTimes = [
+        { time: "5:00 pm", available: true },
+        { time: "5:30 pm", available: true },
+        { time: "6:00 pm", available: true },
+        { time: "6:30 pm", available: true },
+        { time: "7:00 pm", available: true },
+        { time: "7:30 pm", available: true },
+        { time: "8:30 pm", available: true },
+      ];
 export const BookingContext = createContext(BookingData);
 
 // This is the reducer function that handles actions related to booking data
@@ -64,23 +74,12 @@ export const useBookingContext = () => {
 export const BookingProvider = ({ children }) => {
     const [bookingDataState, dispatchBooking]= useReducer(bookingReducer, BookingData);
 
-    // This variable holds the initial value the available time slots
-    const availableTimes = [
-        { time: "5:00 pm", available: true },
-        { time: "5:30 pm", available: true },
-        { time: "6:00 pm", available: true },
-        { time: "6:30 pm", available: true },
-        { time: "7:00 pm", available: true },
-        { time: "7:30 pm", available: true },
-        { time: "8:30 pm", available: true },
-      ];
-
-    const [availability, dispatchAvailability] = useReducer(availabilityReducer, availableTimes);
+    const [availableTimesState, dispatchAvailability] = useReducer(availabilityReducer, availableTimes);
 
     const contextValue = {
         bookingData: bookingDataState, // Current booking data state
         dispatchBooking, // Function to update booking data state
-        availability: availabilityState, // Current availability state
+        availableTimes: availableTimesState, // Current availability state
         dispatchAvailability,// Function to update availability state
 
     };
