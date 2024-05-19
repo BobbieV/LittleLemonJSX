@@ -9,7 +9,7 @@ import  BookingSlot  from './BookingSlot.jsx';
 
 const BookingForm = () => {
 
-    const { dispatchBooking, dispatchAvailability, availability} = useBookingContext();
+    const { dispatchBooking, dispatchAvailability, availableTimes} = useBookingContext();
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
