@@ -13,7 +13,7 @@ const BookingForm = () => {
 
     const [resName, setResName] = useState("");
     const [date, setDate] = useState("");
-    const [time, setSelectedTime] = useState("");
+    const [time, setTime] = useState("");
     const [numGuests, setNumGuests] = useState("")
     const [occasion, setOccasion] = useState("");
 
@@ -25,7 +25,8 @@ const BookingForm = () => {
     }
     const handleTimeChange = (e) => {
         const time = e.target.value;
-        setSelectedTime(time);
+        setTime(time);
+        console.log('handleTimeChange ', time )
         dispatchAvailability({
             type: 'UPDATE_AVAILABILITY',
             payload: { time },
@@ -46,7 +47,7 @@ const BookingForm = () => {
         alert("Your reservation is Confirmed");
         setResName("");
         setDate("");
-        setSelectedTime("");
+        setTime("");
         setNumGuests("");
         setOccasion("");
         //setBookingData({...bookingData, resName, date, time, numGuests, occasion});
@@ -102,7 +103,7 @@ const BookingForm = () => {
                             value={time}
                             onChange={handleTimeChange}
                             >
-                                {availability.map((slot, index) => (
+                                {availableTimes.map((slot, index) => (
                                  <BookingSlot
                                     key={index}
                                     time={slot.time}
