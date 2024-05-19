@@ -18,7 +18,7 @@ import Bookings from './components/Bookings.jsx';
 function App() {
 
   return (
-    <BookingProvider>
+    <CombinedProvider>
       <BrowserRouter >
         <div className="navLinksWrapper">
           <nav id="nav">
@@ -92,7 +92,7 @@ function App() {
           <Route path="/components/Bookings" element={<Bookings />}/>
         </Routes>
       </BrowserRouter>
-    </BookingProvider>
+    </CombinedProvider>
   )
 }
 
