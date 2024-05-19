@@ -103,7 +103,7 @@ const BookingForm = () => {
                             value={time}
                             onChange={handleTimeChange}
                             >
-                                {availableTimes.map((slot, index) => (
+                                {state.map((slot, index) => (
                                  <BookingSlot
                                     key={index}
                                     time={slot.time}
