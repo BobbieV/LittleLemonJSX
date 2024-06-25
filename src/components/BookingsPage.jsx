@@ -7,6 +7,7 @@ function BookingsPage() {
   return (
     <div>
       <BookingForm />
+      <p>Test: Bottom of Booking form on Bookings Page</p>
      </div>
 
   );
